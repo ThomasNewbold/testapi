@@ -20,6 +20,7 @@ Running this commande generates a number of files, the four to look at are:
 *	web/controllers/user_controller.ex
 *	web/views/user_view.ex
 *	priv/repo/migrations/20170110190351_create_user.exs
+
 The first file is the User models, which from the command was defined to have two attributes, a fullname and an email, both of type string. Looking into that file we see that Phoenix added the timestamps function to the schema which, much like Rails 'timestamps' function generates created_at and updated_at fields. 
 The next file to look at is the user_controller.ex. From our one generate command, all the basic CRUD operations were added to the controller. 
 The user_view.ex file is important for our JSON rendering. Since our command specified generating JSON, this file gives the structure of what a User object looks like when converted to JSON. The structure is very simple consisting of an id and the two fields specified in the command, fullname and email. I added the following two lines to also retrieve the create and update time, my render user.json looks like:
